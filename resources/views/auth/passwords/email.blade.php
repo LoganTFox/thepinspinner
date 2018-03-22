@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <div class="top-right links">
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
