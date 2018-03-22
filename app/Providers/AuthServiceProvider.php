@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Pin;
+use App\Policies\PinPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 

@@ -15,7 +15,7 @@ class BoardsController extends Controller
      */
     public function index()
     {
-        $boards = Board::all();
+        $boards = Board::where('user_id', '=', auth()->id())->get();
 
         return view('boards.index', compact('boards'));
     }
@@ -27,7 +27,7 @@ class BoardsController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::where('user_id', '=', auth()->id())->get();
 
         return view('boards.create', compact('categories'));
     }
@@ -45,6 +45,7 @@ class BoardsController extends Controller
         $board->title = $request->title;
         $board->link = $request->link;
         $board->category_id = $request->category_id;
+        $board->user_id = auth()->id();
 
         $validatedData = $request->validate([
             'title' => 'required|max:100',

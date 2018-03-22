@@ -16,7 +16,7 @@ class PinsController extends Controller
      */
     public function index()
     {
-        $pins = Pin::all();
+        $pins = Pin::where('user_id', '=', auth()->id())->get();
 
         return view('pins.index', compact('pins'));
     }
@@ -28,9 +28,9 @@ class PinsController extends Controller
      */
     public function create()
     {
-        $boards = Board::all();
+        $boards = Board::where('user_id', '=', auth()->id())->get();
 
-        $categories = Category::all();
+        $categories = Category::where('user_id', '=', auth()->id())->get();
 
         return view('pins.create', compact('boards'), compact('categories'));
     }
@@ -48,6 +48,7 @@ class PinsController extends Controller
         $pin->title = $request->title;
         $pin->link = $request->link;
         $pin->category_id = $request->category_id;
+        $pin->user_id = auth()->id();
 
         $validatedData = $request->validate([
             'title' => 'required|max:100',

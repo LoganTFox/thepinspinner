@@ -16,11 +16,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $boards = Board::all();
+        $boards = Board::where('user_id', '=', auth()->id())->get();
 
-        $categories = Category::paginate(1);
+        $categories = Category::where('user_id', '=', auth()->id())->paginate(1);
 
-        $pins = Pin::inRandomOrder()->get();
+        $pins = Pin::where('user_id', '=', auth()->id())->inRandomOrder()->get();
 
         return view('dashboard', [
             'boards' => $boards,

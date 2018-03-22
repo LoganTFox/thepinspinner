@@ -14,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::where('user_id', '=', auth()->id())->get();
 
         return view('categories.index', compact('categories'));
     }
@@ -40,6 +40,7 @@ class CategoriesController extends Controller
         $category = new Category;
 
         $category->title = $request->title;
+        $category->user_id = auth()->id();
 
         $validatedData = $request->validate([
             'title' => 'required|max:100',
