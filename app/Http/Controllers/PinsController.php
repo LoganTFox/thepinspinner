@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use App\Board;
 use App\Category;
 use App\Pin;
@@ -28,9 +29,14 @@ class PinsController extends Controller
      */
     public function create()
     {
-        $boards = Board::where('user_id', '=', auth()->id())->get();
-
         $categories = Category::where('user_id', '=', auth()->id())->get();
+
+        if ($categories->count() == 0) {
+
+            flash('You must have at least one category before creating a pin.')->info();
+
+            return redirect()->back();
+        }
 
         return view('pins.create', compact('boards'), compact('categories'));
     }
@@ -62,6 +68,8 @@ class PinsController extends Controller
 
         $pin->save();
 
+        flash('Pin added successfully')->success();
+
         return redirect('/pins');
     }
 
@@ -88,9 +96,9 @@ class PinsController extends Controller
     {
         $pin = Pin::find($id);
 
-        $boards = Board::all();
+        $categories = Category::where('user_id', '=', auth()->id())->get();
 
-        return view('pins.update', compact('pin'), compact('boards'));
+        return view('pins.update', compact('pin'), compact('categories'));
     }
 
     /**
@@ -109,7 +117,7 @@ class PinsController extends Controller
 
         $pin->save();
 
-        $pin->boards()->sync($request->boards);
+        flash('Pin updated successfully')->success();
 
         return redirect('/pins');
     }
@@ -123,6 +131,8 @@ class PinsController extends Controller
     public function destroy(Pin $pin)
     {
         $pin->delete();
+
+        flash("Pin deleted successfully")->error();
 
         return redirect('/pins');
     }

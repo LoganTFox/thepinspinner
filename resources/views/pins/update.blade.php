@@ -18,20 +18,15 @@
                 <input type="text" class="form-control" id="link" name="link" value="{{ $pin->link }}">
             </div>
 
-            @foreach($boards as $board)
-                <div class="form-check form-check-inline">
-                    <input name="boards[]"
-                           @if($pin->boards->contains($board))
-                               checked
-                           @endif
-                           value="{{ $board->id }}" class="form-check-input" type="checkbox" id="group">
-                    <label class="form-check-label" for="gridCheck">
-                        {{ $board->title }}
-                    </label>
-                </div>
-            @endforeach
-
-            <br><br>
+            <div class="form-group">
+                <label for="category_id">Choose a Category:</label>
+                <select name="category_id" id="category_id" class="form-control">
+                    <option value="">Choose One...</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <button type="submit" class="btn btn-success">Update Pin</button>
 

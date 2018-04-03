@@ -29,6 +29,13 @@ class BoardsController extends Controller
     {
         $categories = Category::where('user_id', '=', auth()->id())->get();
 
+        if ($categories->count() == 0) {
+
+            flash('You must have at least one category before creating a board.')->info();
+
+            return redirect()->back();
+        }
+
         return view('boards.create', compact('categories'));
     }
 
@@ -58,6 +65,8 @@ class BoardsController extends Controller
         ]);
 
         $board->save();
+
+        flash('Board added successfully')->success();
 
         return redirect('/boards');
     }
@@ -104,6 +113,8 @@ class BoardsController extends Controller
 
         $board->save();
 
+        flash('Board updated successfully')->success();
+
         return redirect('/boards');
     }
 
@@ -116,6 +127,8 @@ class BoardsController extends Controller
     public function destroy(Board $board)
     {
         $board->delete();
+
+        flash('Board deleted successfully')->error();
 
         return redirect('/boards');
     }

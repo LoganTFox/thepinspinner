@@ -11,8 +11,6 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Styles -->
     <style>
         html, body {
@@ -71,11 +69,28 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .alert {
+            position: absolute;
+            z-index: 10;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
+
+    @include('flash::message')
+
     @yield('content')
 </div>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script>
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+</script>
 </body>
 </html>

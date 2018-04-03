@@ -50,6 +50,8 @@ class CategoriesController extends Controller
 
         $category->save();
 
+        flash('Category added successfully')->success();
+
         return redirect('/categories');
     }
 
@@ -94,6 +96,8 @@ class CategoriesController extends Controller
 
         $category->save();
 
+        flash('Category updated successfully')->success();
+
         return redirect('/categories');
     }
 
@@ -109,6 +113,8 @@ class CategoriesController extends Controller
 
         $category->boards()->delete();
         $category->pins()->delete();
+
+        flash('Category deleted successfully')->error();
 
         return redirect('/categories');
     }
