@@ -23,7 +23,11 @@
                 <select name="category_id" id="category_id" class="form-control">
                     <option value="">Choose One...</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
+                        <option value="{{ $category->id }}"
+                            @if($pin->category->id == $category->id)
+                                selected
+                            @endif
+                        >{{ $category->title }}</option>
                     @endforeach
                 </select>
             </div>

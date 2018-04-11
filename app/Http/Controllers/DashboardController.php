@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Board;
 use App\Category;
+use App\Note;
 use App\Pin;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -22,10 +24,16 @@ class DashboardController extends Controller
 
         $pins = Pin::where('user_id', '=', auth()->id())->inRandomOrder()->get();
 
+        $tags = Tag::all();
+
+        $notes = Note::where('user_id', '=', auth()->id())->get();
+
         return view('dashboard', [
             'boards' => $boards,
             'categories' => $categories,
-            'pins' => $pins
+            'pins' => $pins,
+            'tags' => $tags,
+            'notes' => $notes
         ]);
     }
 }

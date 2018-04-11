@@ -24,6 +24,12 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Pin::class, function (Faker $faker) {
     return [
+        'user_id' => function() {
+            return factory(\App\User::class)->create()->id;
+        },
+        'category_id' => function() {
+            return factory(\App\Category::class)->create()->id;
+        },
         'title' => $faker->sentence($nbWords = 4),
         'link' => $faker->url
     ];
@@ -31,7 +37,28 @@ $factory->define(App\Pin::class, function (Faker $faker) {
 
 $factory->define(App\Board::class, function (Faker $faker) {
     return [
+        'user_id' => function() {
+            return factory(\App\User::class)->create()->id;
+        },
+        'category_id' => function() {
+            return factory(\App\Category::class)->create()->id;
+        },
         'title' => $faker->company,
         'link' => $faker->url
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker $faker) {
+    return [
+        'user_id' => function() {
+            return factory(\App\User::class)->create()->id;
+        },
+        'title' => $faker->word,
+    ];
+});
+
+$factory->define(App\Tag::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
     ];
 });

@@ -18,6 +18,20 @@
                 <input type="text" class="form-control" id="link" name="link" value="{{ $board->link }}">
             </div>
 
+            <div class="form-group">
+                <label for="category_id">Choose a Category:</label>
+                <select name="category_id" id="category_id" class="form-control">
+                    <option value="">Choose One...</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"
+                                @if($board->category->id == $category->id)
+                                    selected
+                                @endif
+                        >{{ $category->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-success">Update Board</button>
 
         </form>

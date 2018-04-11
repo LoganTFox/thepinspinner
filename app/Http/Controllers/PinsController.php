@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use App\Board;
 use App\Category;
@@ -114,6 +115,7 @@ class PinsController extends Controller
 
         $pin->title = $request->title;
         $pin->link = $request->link;
+        $pin->category_id = $request->category_id;
 
         $pin->save();
 
@@ -142,5 +144,16 @@ class PinsController extends Controller
         $pin = Pin::find($id);
 
         return view('pins.delete', compact('pin'));
+    }
+
+    public function pinDate(Pin $pin)
+    {
+        $pin->pin_date = Carbon::now();
+
+        $pin->save();
+
+        flash("Pin marked successfully")->success();
+
+        return redirect()->back();
     }
 }

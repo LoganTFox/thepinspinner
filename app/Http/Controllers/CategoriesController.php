@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Board;
 use App\Category;
+use App\Pin;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -65,7 +67,9 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
 
-        return view('categories.category', compact('category'));
+        return view('categories.category', [
+            'category' => $category,
+        ]);
     }
 
     /**

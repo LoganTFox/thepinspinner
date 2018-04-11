@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pin extends Model
 {
+    protected $dates = ['pin_date'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Board;
 use App\Category;
+use App\Pin;
 use Illuminate\Http\Request;
 
 class BoardsController extends Controller
@@ -81,7 +82,9 @@ class BoardsController extends Controller
     {
         $board = Board::find($id);
 
-        return view('boards.board', compact('board'));
+        $pins = Pin::all();
+
+        return view('boards.board', compact('board'), compact('pins'));
     }
 
     /**
@@ -94,7 +97,9 @@ class BoardsController extends Controller
     {
         $board = Board::find($id);
 
-        return view('boards.update', compact('board'));
+        $categories = Category::where('user_id', '=', auth()->id())->get();
+
+        return view('boards.update', compact('board'), compact('categories'));
     }
 
     /**
@@ -110,6 +115,7 @@ class BoardsController extends Controller
 
         $board->title = $request->title;
         $board->link = $request->link;
+        $board->category_id = $request->category_id;
 
         $board->save();
 
