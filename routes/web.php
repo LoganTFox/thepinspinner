@@ -41,4 +41,10 @@ Route::get('/dashboard', 'DashboardController@index')->name('home')->middleware(
 Route::get('/subscribe', 'SubscriptionsController@index');
 Route::post('/subscribe', 'SubscriptionsController@store');
 
+Route::get('/account', 'AccountsController@show')->middleware('auth');
+Route::post('/account/subscription', 'AccountsController@updateSubscription')->middleware('auth');
+Route::post('/account/card', 'AccountsController@updateCard')->middleware('auth');
+Route::get('account/invoices/{invoice}', 'AccountsController@downloadInvoice')->middleware('auth');
+Route::delete('/account/subscription', 'AccountsController@deleteSubscription')->middleware('auth');
+
 

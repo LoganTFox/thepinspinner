@@ -4,29 +4,44 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="nav navbar-nav">
+
             <li class="nav-item active">
                 <a class="nav-link" href="/dashboard">Dashboard</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/pins">Manage Pins</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/boards">Manage Boards</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/categories">Manage Catergories</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/pins/create">Add Pin</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/boards/create">Add Board</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/categories/create">Add Category</a>
+
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link" href="/categories/create">Add Category</a>
+                    <a class="nav-link" href="/categories">Manage Catergories</a>
+                </div>
             </li>
 
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Boards
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link" href="/boards/create">Add Board</a>
+                    <a class="nav-link" href="/boards">Manage Boards</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pins
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link" href="/pins/create">Add Pin</a>
+                    <a class="nav-link" href="/pins">Manage Pins</a>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
             @guest
                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                 <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
@@ -37,6 +52,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/account">Manage Account</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

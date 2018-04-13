@@ -88,16 +88,6 @@
     @yield('content')
 </div>
 
-<script src="{{ asset('js/app.js') }}" defer></script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-    var stripe = Stripe("{{ env('STRIPE_KEY') }}");
-    var elements = stripe.elements();
-</script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-<script>
-    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
-</script>
+@include('layouts.javascript')
 </body>
 </html>
