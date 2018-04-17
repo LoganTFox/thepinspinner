@@ -18,7 +18,7 @@
 
 <div class="container">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="{{ asset('assets/img/pslogo.png') }}" alt="" width="100" height="100">
         <h2>Sign Up For The Pin Spinner!</h2>
         <p class="lead"></p>
     </div>
@@ -59,27 +59,19 @@
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
             </div>
 
-            <hr class="mb-4">
-
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="mb-3">Payment Info</h4>
+            <div class="form-row">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
                 </div>
 
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8 mb-3">
-                            <div id="card-element">
-                                <label>Credit Card Info</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Used to display Element errors. -->
+                <div id="card-errors" role="alert"></div>
             </div>
 
             <hr class="mb-4">
-
-            <div id="stripe-errors" role="alert"></div>
 
             <div class="form-group">
                 <button class="btn btn-outline-primary btn-lg btn-block" type="submit">Join Now</button>
@@ -92,6 +84,19 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-@include('layouts.javascript')
+{{--@include('layouts.javascript')--}}
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('pk_test_EaStwloUGCafmDdOnHuq7kOa');
+    var elements = stripe.elements();
+</script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/subscribe.js') }}" defer></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+</script>
 </body>
 </html>

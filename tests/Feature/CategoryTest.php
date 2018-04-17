@@ -46,7 +46,7 @@ class CategoryTest extends TestCase
     }
 
     /** @test */
-    public function user_can_create_category()
+    public function user_can_create_a_category()
     {
         $user = factory(User::class)->create();
         $category = factory(Category::class)->make();

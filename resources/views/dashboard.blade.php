@@ -10,50 +10,44 @@
         <hr><br>
             <div class="row">
                 <div class="col-md-9">
-                    @foreach($categories as $category)
-                        <h3>Category: {{ $category->title }}</h3>
-                        <br>
-                        <span>{{ $categories->links() }}</span>
-                        @foreach($category->boards as $board)
-                            <div class="col">
-                                <table class="table table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">{{ $board->title }}</th>
-                                        <th scope="col">Pin Name</th>
-                                        <th scope="col">Pin Link</th>
-                                        <th scope="col">Last Pinned</th>
-                                        <th scope="col">Mark as Pinned</th>
-                                    </tr>
-                                    </thead>
-                                    @foreach($category->pins as $key => $pin)
-                                        <tbody>
-                                        <tr class="tableRow">
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $pin->title }}</td>
-                                            <td><a href="{{ $pin->link }}" target="_blank">{{ $pin->link }}</a></td>
-                                            @if($pin->pin_date)
-                                                <td>{{ $pin->pin_date->toDayDateTimeString() }}</td>
-                                            @else
-                                                <td>-</td>
-                                            @endif
-                                            <td>
-                                                <form action="/pins/pin-date/{{ $pin->id }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('PATCH') }}
-
-                                                    <button type="submit" class="btn btn-outline-secondary btn-sm rowButton">Mark Pinned</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    @endforeach
-                                </table>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <h3><a href="/categories">Categories</a></h3>
+                                </div>
+                                <div class="card-body">
+                                    <h1><i class="fas fa-list-ul fa-sm"></i> {{ $categories->count() }}</h1>
+                                    <br>
+                                    <a href="/categories/create" class="btn btn-outline-danger">Add a Category</a>
+                                </div>
                             </div>
-                            <div class="w-100"></div>
-                        @endforeach
-                    @endforeach
-                    <span style="float: left">{{ $categories->links() }}</span>
+                        </div>
+                        <div class="col-md">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <h3><a href="/boards">Boards</a></h3>
+                                </div>
+                                <div class="card-body">
+                                    <h1><i class="fas fa-clipboard fa-sm"></i> {{ $boards->count() }}</h1>
+                                    <br>
+                                    <a href="/boards/create" class="btn btn-outline-danger">Add a Board</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <h3><a href="/pins">Pins</a></h3>
+                                </div>
+                                <div class="card-body">
+                                    <h1><i class="fas fa-thumbtack fa-sm"></i> {{ $pins->count() }}</h1>
+                                    <br>
+                                    <a href="/pins/create" class="btn btn-outline-danger">Add a Pin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-3">
@@ -115,3 +109,60 @@
             </div>
         </div>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{--@foreach($categories as $category)--}}
+    {{--<h3>Category: {{ $category->title }}</h3>--}}
+    {{--<br>--}}
+    {{--<span>{{ $categories->links() }}</span>--}}
+    {{--@foreach($category->boards as $board)--}}
+        {{--<div class="col">--}}
+            {{--<table class="table table-striped table-bordered">--}}
+                {{--<thead>--}}
+                {{--<tr>--}}
+                    {{--<th scope="col">{{ $board->title }}</th>--}}
+                    {{--<th scope="col">Pin Name</th>--}}
+                    {{--<th scope="col">Pin Link</th>--}}
+                    {{--<th scope="col">Last Pinned</th>--}}
+                    {{--<th scope="col">Mark as Pinned</th>--}}
+                {{--</tr>--}}
+                {{--</thead>--}}
+                {{--@foreach($category->pins as $key => $pin)--}}
+                    {{--<tbody>--}}
+                    {{--<tr class="tableRow">--}}
+                        {{--<td>{{ $key + 1 }}</td>--}}
+                        {{--<td>{{ $pin->title }}</td>--}}
+                        {{--<td><a href="{{ $pin->link }}" target="_blank">{{ $pin->link }}</a></td>--}}
+                        {{--@if($pin->pin_date)--}}
+                            {{--<td>{{ $pin->pin_date->toDayDateTimeString() }}</td>--}}
+                        {{--@else--}}
+                            {{--<td>-</td>--}}
+                        {{--@endif--}}
+                        {{--<td>--}}
+                            {{--<form action="/pins/pin-date/{{ $pin->id }}" method="POST">--}}
+                                {{--{{ csrf_field() }}--}}
+                                {{--{{ method_field('PATCH') }}--}}
+
+                                {{--<button type="submit" class="btn btn-outline-secondary btn-sm rowButton">Mark Pinned</button>--}}
+                            {{--</form>--}}
+                        {{--</td>--}}
+                    {{--</tr>--}}
+                    {{--</tbody>--}}
+                {{--@endforeach--}}
+            {{--</table>--}}
+        {{--</div>--}}
+        {{--<div class="w-100"></div>--}}
+    {{--@endforeach--}}
+{{--@endforeach--}}
+{{--<span style="float: left">{{ $categories->links() }}</span>--}}

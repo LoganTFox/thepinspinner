@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>AppX - Documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="assets/images/favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    
+	<!-- Global CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+    
+	<!-- Plugins CSS -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-yellow">
+    <div class="page-wrapper">
+	
+        <!-- HEADER -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">AppX</span><span class="text-bold"> Documentation</span>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        </header>
+		
+		
+		<!-- DOC WRAPPER -->
+        <div class="doc-wrapper">
+            <div class="container">
+				
+				
+				<!-- DOC HEADER -->
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Start Guide</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: November 2017</div>
+                </div>
+				
+				
+				<!-- DOC BODY -->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+							
+							
+							<!-- Intro -->
+                            <section id="intro" class="doc-section">
+                                <h2 class="section-title">Introduction</h2>
+                                <div class="section-block">
+                                    <p>
+										After unzip the package, you need the HTML folder content. 
+										There are HTML, CSS, Javascript and SCSS files used in the template. 
+										Create a new folder with these files to start editing them. The template 
+										is based on the Bootstrap Framework v4. The complete documentation on this 
+										framework can be found at <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a>.
+                                    </p>
+									<p>
+										Thank you for purchasing this item.
+									</p>
+                                </div>
+                            </section>
+							
+							
+							
+							
+							<!-- Included -->
+							<section id="included" class="doc-section">
+								<h2 class="section-title">What's included</h2>
+								
+								<div class="section-block">
+									<p>
+										Within the download you'll find the following directories and files, logically grouping common resources:
+									</p>
+									<img src="assets/images/folders.png" class="img-responsive" alt="image">
+								</div>
+								
+								<div class="code-block">
+									
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Customizing -->
+							<section id="customizing" class="doc-section">
+								<h2 class="section-title">Customizing</h2>
+								
+								<div class="section-block">
+									<p>
+										You can customize the template in many ways.
+									</p>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">Via CSS</h3>
+									<p>
+										In the folder <b>assets/css</b> there is a file named <b>custom.css</b>. Use it to override the template 
+										styles to fit your needs like the example below:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#af82d4">/* Default style in template.css*/</span>
+<span style="color:#016cff">body</span> {
+  <span style="color:#a535ae">color</span>: #666666;
+}
+
+<span style="color:#af82d4">/* Your style in custom.css */</span>
+<span style="color:#016cff">body</span> {
+  <span style="color:#a535ae">color</span>: #222222;
+}
+</pre>									
+									</div>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">Via SASS</h3>
+									<p>
+										You can recompile the scss files adding or removing features. Go to the folder <b>scss</b> to see the files. 
+										Here is an example of part of the "_variables.scss" file:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#af82d4">// COLOR PALETTE</span>
+<span style="color:#af82d4">// ================================</span>
+<span style="color:#069;font-weight:700">$</span>white:             #ffffff;
+<span style="color:#069;font-weight:700">$</span>gray:              #<span style="color:#a8017e">666666</span>;
+<span style="color:#069;font-weight:700">$</span>gray<span style="color:#069;font-weight:700">-</span>light:        #f0f0f0;
+<span style="color:#069;font-weight:700">$</span>gray<span style="color:#069;font-weight:700">-</span>lighter:      #fbfcfd;
+<span style="color:#069;font-weight:700">$</span>gray<span style="color:#069;font-weight:700">-</span>lightest:     #fdfdfd;
+
+<span style="color:#069;font-weight:700">$</span>blue:              #2F9CFD;
+<span style="color:#069;font-weight:700">$</span>green:             #37BC9B;
+<span style="color:#069;font-weight:700">$</span>red:               #DA4453;
+<span style="color:#069;font-weight:700">$</span>orange:            #FFA400;
+<span style="color:#069;font-weight:700">$</span>yellow:            #F7CA18;
+<span style="color:#069;font-weight:700">$</span>purple:            #9152FF;
+
+<span style="color:#af82d4">// TEMPLATE MAIN COLOR</span>
+<span style="color:#af82d4">// ================================</span>
+<span style="color:#069;font-weight:700">$</span>template<span style="color:#069;font-weight:700">-</span>main<span style="color:#069;font-weight:700">-</span>color: <span style="color:#069;font-weight:700">$</span>blue;
+
+<span style="color:#af82d4">// FONT</span>
+<span style="color:#af82d4">// ================================</span>
+<span style="color:#069;font-weight:700">$</span>body<span style="color:#069;font-weight:700">-</span>font<span style="color:#069;font-weight:700">-</span>color: <span style="color:#069;font-weight:700">$</span>gray;
+<span style="color:#069;font-weight:700">$</span>header<span style="color:#069;font-weight:700">-</span>font<span style="color:#069;font-weight:700">-</span>family: <span style="color:#666">'Roboto'</span>, sans<span style="color:#069;font-weight:700">-</span>serif;
+...
+...
+...
+</pre>							
+									</div>
+									<div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title"><i>Template main color</i></h4>
+                                            <p>
+												The variable <b>$template-main-color</b> is the default template color. This will be the default color of buttons, 
+												links and other elements on the page. Use any color in the color palette or your preferred color.
+											</p>
+                                        </div>
+                                    </div>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">Editing the HTML files</h3>
+									<p>
+										Inside the HTML folder you will find two index files (<b>index.html</b> and <b>index-02.html</b>). Use your favorite 
+										text editor to add your text and images.
+									</p>
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Font -->
+							<section id="font" class="doc-section">
+								<h2 class="section-title">Font</h2>
+								<div class="section-block">
+                                    <p>
+										Typography is the standard adopted in <a href="http://getbootstrap.com/docs/4.0/content/typography/" target="blank">Bootstrap</a>.
+                                    </p>
+                                </div>
+							</section>
+							
+							
+							
+							
+							<!-- Icons -->
+							<section id="icons" class="doc-section">
+								<h2 class="section-title">Icons</h2>
+								
+								<div class="section-block">
+									<h3 class="block-title">Font Awesome</h3>
+									<p>
+										The default font of icons used is the <a target="blank" href="http://fontawesome.io">Font Awesome</a>.
+									</p>
+								</div>
+								
+								<div class="code-block">
+									
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Structure -->
+							<section id="structure" class="doc-section">
+								<h2 class="section-title">Structure</h2>
+								
+								<div class="section-block">
+									<h3 class="block-title">HTML structure</h3>
+									<p>
+										The template is responsive and organized with sections, containers, rows, and columns. 
+										The layout is based on the <a target="blank" href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap Grid System</a>.
+										The default Bootstrap grid system utilizes 12 columns. The grid adapts from extra small devices (<576px) to extra large devices 
+										(≥1200px).
+									</p>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">HEAD section</h3>
+									<p>
+										CSS files on HEAD section:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#af82d4">&lt;!-- Favicon --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">link</span> <span style="color:#963dff">rel</span>=<span style="color:#666">"icon"</span> <span style="color:#963dff">href</span>=<span style="color:#666">"assets/img/favicon.ico"</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Icons --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">link</span> <span style="color:#963dff">href</span>=<span style="color:#666">"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"</span> <span style="color:#963dff">rel</span>=<span style="color:#666">"stylesheet"</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Plugin CSS --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">link</span> <span style="color:#963dff">rel</span>=<span style="color:#666">"stylesheet"</span> <span style="color:#963dff">href</span>=<span style="color:#666">"assets/css/bootstrap.min.css"</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Template CSS --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">link</span> <span style="color:#963dff">rel</span>=<span style="color:#666">"stylesheet"</span> <span style="color:#963dff">href</span>=<span style="color:#666">"assets/css/template.css"</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">link</span> <span style="color:#963dff">rel</span>=<span style="color:#666">"stylesheet"</span> <span style="color:#963dff">href</span>=<span style="color:#666">"assets/css/custom.css"</span>></span>
+</pre>
+									</div>
+									<div class="callout-block callout-success">
+										<div class="icon-holder">
+											<i class="fa fa-thumbs-up"></i>
+										</div>
+										<div class="content">
+											<h4 class="callout-title"><i>CSS files</i></h4>
+											<p>
+												You can merge all CSS files into just one file to reduce the number of page requests and the use of the data band
+											</p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">Javascript Content</h3>
+									<p>
+										The javascript files have been placed at the bottom of the page for better performance:
+									</p>
+									
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#af82d4">&lt;!-- jQuery --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/jquery-3.0.0.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Loader --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/imagesloaded.pkgd.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Maps --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"http://maps.google.com/maps/api/js?libraries=places<span style="background:#900;color:#fff">&amp;</span>key=AIzaSyBu1ynGGNGOgWGprPgHz9uRwCBP2Eh0Vrc"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/locationpicker.jquery.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Bootstrap --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/bootstrap.bundle.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Form validation --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/jquery.validate.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/additional-methods.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span> 
+
+<span style="color:#af82d4">&lt;!-- Navigation --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/navigation.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/navigation.fixed.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/navigation.scrollspy.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Animation --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/jquery.particleground.min.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+
+<span style="color:#af82d4">&lt;!-- Main script --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/main.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">script</span> <span style="color:#963dff">src</span>=<span style="color:#666">"assets/js/custom.js"</span>>&lt;/<span style="color:#016cff">script</span>></span>
+</pre>
+									</div>
+									
+									<div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title"><i>main.js</i> and <i>custom.js</i></h4>
+                                            <p>
+												The scripts are being initialized into the <b>main.js</b> file. Use this file to modify parameters. 
+												Just use the file <b>custom.js</b> to add your custom javascript code
+											</p>
+                                        </div>
+                                    </div>
+									<div class="callout-block callout-success">
+										<div class="icon-holder">
+											<i class="fa fa-thumbs-up"></i>
+										</div>
+										<div class="content">
+											<h4 class="callout-title"><i>JS files</i></h4>
+											<p>
+												You can merge all JS files into just one file to reduce the number of page requests and the use of the data band
+											</p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="section-block">
+									<h3 class="block-title">Margins and Paddings</h3>
+									<p>
+										AppX uses the CSS classes of shorthand responsive margin and padding utility classes to modify an element's appearance. 
+										For example:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#7a7a7a">&lt;<span style="color:#016cff">p</span> <span style="color:#963dff">class</span>=<span style="color:#666">"lead mx-auto mt-5"</span>></span>
+    Our app can bring many benefits to you. See below some of them.
+<span style="color:#7a7a7a">&lt;/<span style="color:#016cff">p</span>></span>
+</pre>
+									</div>
+									<p>
+										<ul>
+											<li><b>mx-auto</b> is used to center the element horizontally</li>
+											<li><b>mt-5</b> gives a level 5 margin to the paragraph</li>
+										</ul>
+										More details at <a href="http://getbootstrap.com/docs/4.0/utilities/spacing/" target="blank">Bootstrap Spacing</a>
+									</p>
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Nav -->
+							<section id="nav" class="doc-section">
+								<h2 class="section-title">Navigation</h2>
+								
+								<h3 class="block-title">Fixed navbar</h3>
+								<p>
+									AppX has a fixed navigation with brand text, a centralized menu, and a search button on the right. 
+									You can edit the navigation menu via CSS or SCSS. You can define a new position:
+								</p>
+								<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>("<span style="color:#963dff">#navigation</span>").<span style="color:#45ae34;font-weight:700">fixed</span>({
+    topSpace: <span style="color:#a8017e">50</span>
+});
+</pre>
+								</div>
+								
+								<h3 class="block-title">Scrollspy behavior</h3>
+								<p>
+									The navigation automatically update menu links based on scroll position. You can change the scroll speed 
+									or change the offset:
+								</p>
+								<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>("<span style="color:#963dff">#navigation</span>").scrollspy({
+    scrollSpeed: <span style="color:#a8017e">1000</span>,
+    offset: <span style="color:#a8017e">100</span>
+});
+</pre>
+								</div>
+								
+								<h3 class="block-title">Mobile breakpoint</h3>
+								<p>
+									The variable <b>mobileBreakpoint</b> is used to define when the navigation goes to the portrait mode. 
+								</p>
+								<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>("<span style="color:#963dff">#navigation</span>").navigation({
+    mobileBreakpoint: <span style="color:#a8017e">767</span>
+});
+</pre>
+								</div>
+								<div class="callout-block callout-success">
+									<div class="icon-holder">
+										<i class="fa fa-thumbs-up"></i>
+									</div>
+									<div class="content">
+										<h4 class="callout-title"><i>mobileBreakpoint</i></h4>
+										<p>
+											If you change the variable <b><i>mobileBreakpoint</i></b> you may need to change the grid breakpoint.
+										</p>
+									</div>
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Header -->
+							<section id="header-section" class="doc-section">
+								<h2 class="section-title">Header</h2>								
+								<div class="section-block">
+									<p>	
+										There are three HTML files in the package. They have different headers sections:
+										<ul>
+											<li><b>index-static.html:</b> has a simple header with text, buttons and a image</li>
+											<li><b>index-carousel.html:</b> has a carousel slideshow element for cycling the content</li>
+											<li><b>index-animated.html:</b> has an animation to give a special background effect to the header</li>
+										</ul>
+										To see more details about the carousel element go to <a href="http://getbootstrap.com/docs/4.0/components/carousel/" target="blank">Bootstrap Carousel</a></br>
+										To see more details about the animation plugin go to <a href="https://github.com/jnicol/particleground" target="blank">Particleground</a>
+									</p>
+								</div>
+								
+								<div class="code-block">
+									
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Contact -->
+							<section id="contact" class="doc-section">
+								<h2 class="section-title">Contact form</h2>
+								
+								<div class="section-block">
+									<h3 class="block-title">Configuring the PHP file</h3>
+									<p>
+										Along with the template files is included a PHP file for sending messages through the website. 
+										The configuration is simple, open the file <b>contact.php</b> and just replace with your email as indicated:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b">&lt;?php
+<span style="color:#45ae34;font-weight:700">header</span>(<span style="color:#666">'Content-type: application/json'</span>);
+
+<span style="color:#069;font-weight:700">if</span>(<span style="color:#0053ff;font-weight:700">$_POST</span>){
+    <span style="color:#0053ff;font-weight:700">$to_email</span> <span style="color:#069;font-weight:700">=</span> <span style="color:#666">"your_email_adress@your_email.com"</span>; <span style="color:#af82d4">//Recipient email. Replace with own email here</span>
+
+<span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span>
+<span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span>
+<span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span><span style="color:#069;font-weight:700">.</span>
+</pre>
+									</div>
+								</div>
+								<div class="callout-block callout-warning">
+									<div class="icon-holder">
+										<i class="fa fa-warning"></i>
+									</div>
+									<div class="content">
+										<h4 class="callout-title"><i>contact.php</i></h4>
+										<p>
+											Maybe your hosting server demands additional configuration. Contact your service for further information.
+										</p>
+									</div>
+								</div>
+								<div class="section-block">
+									<h3 class="block-title">Form validation</h3>
+									<p>
+										The contact form is equipped with field validation. "jQuery Validation Plugin" is configured for this validation. 
+										You can open the <b>main.js</b> file to view the configuration and modify the terms if necessary. 
+										For more details about the validation plugin go to <a href="https://jqueryvalidation.org/" target="blank">jQuery Validation Plugin</a>.
+									</p>
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Map -->
+							<section id="map" class="doc-section">
+								<h2 class="section-title">Google Maps</h2>
+								
+								<div class="section-block">
+									<h3 class="block-title">Configuring the map to your location</h3>
+									<p>
+										We use the "JQuery Location Picker" plugin to make easy to use Google Maps API. Along with single point selection, 
+										it allows area selection by choosing a point and specifying a radius. In <b>main.js</b> you can see the plugin 
+										initialization:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>('<span style="color:#963dff">#map</span>').locationpicker({
+    location: {
+        latitude: <span style="color:#a8017e">48.8588208</span>,
+        longitude: <span style="color:#a8017e">2.3495592</span>
+    },
+    radius: <span style="color:#a8017e">10</span>
+});
+</pre>
+									</div>
+									<p>
+										Replace by your coordinates and a desired radius value. For information about the plugin go to 
+										<a href="https://github.com/Logicify/jquery-locationpicker-plugin" target="blank">JQuery Location Picker</a>. 
+										For information about Google Maps API go to <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="blank">Google Maps Javascript API</a>.
+									</p>
+									</br>
+									<div class="callout-block callout-warning">
+										<div class="icon-holder">
+											<i class="fa fa-warning"></i>
+										</div>
+										<div class="content">
+											<h4 class="callout-title"><i>Google Maps API</i></h4>
+											<p>
+												It's ideal to use the Google Maps API with an API key to avoid limitations in using maps. Check the link 
+												above for how to get your API key.
+											</p>
+										</div>
+									</div>
+								</div>
+							</section>
+							
+							
+							
+							
+							<!-- Loader -->
+							<section id="loader" class="doc-section">
+								<h2 class="section-title">Preloader</h2>
+								
+								<div class="section-block">
+									<p>
+										To make the image loading more friendly, we use the "imagesLoaded" plugin. This plugin shows a CSS animation 
+										until all images on the page are loaded. The first element inside page's body is the "loader": 
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#af82d4">&lt;!-- Loader --></span>
+<span style="color:#7a7a7a">&lt;<span style="color:#016cff">div</span> <span style="color:#963dff">class</span>=<span style="color:#666">"loader"</span>></span>
+    <span style="color:#7a7a7a">&lt;<span style="color:#016cff">div</span> <span style="color:#963dff">class</span>=<span style="color:#666">"cp-spinner cp-skeleton"</span>>&lt;/<span style="color:#016cff">div</span>></span>
+<span style="color:#7a7a7a">&lt;/<span style="color:#016cff">div</span>></span>
+</pre>
+									</div>
+									<p>
+										In <b>main.js</b>:
+									</p>
+									<div class="code-block">
+<pre style="background:#fff;color:#3b3b3b"><span style="color:#a535ae">$</span>("<span style="color:#016cff">body</span>").imagesLoaded().always(<span style="color:#ff5600">function</span>(instance){
+    <span style="color:#a535ae">$</span>("<span style="color:#963dff">.loader</span>").delay(<span style="color:#a8017e">300</span>)<span style="color:#45ae34;font-weight:700">.fadeOut</span>(<span style="color:#a8017e">500</span>);
+});
+</pre>
+									</div>
+									<p>
+										For more information about "imagesLoaded" plugin go to <a href="https://github.com/desandro/imagesloaded" target="blank">imagesLoaded</a>.
+									</p>
+								</div>
+							</section>
+							
+							
+                        </div>
+                    </div>
+					
+					
+					
+					<!-- SIDEBAR -->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#intro">Introduction</a></li>
+								<li><a class="scrollto" href="#included">What's included</a></li>
+								<li><a class="scrollto" href="#customizing">Customizing</a></li>
+								<li><a class="scrollto" href="#font">Font</a></li>
+								<li><a class="scrollto" href="#icons">Icons</a></li>
+								<li><a class="scrollto" href="#structure">Structure</a></li>
+								<li><a class="scrollto" href="#nav">Navigation</a></li>
+								<li><a class="scrollto" href="#header-section">Header</a></li>
+								<li><a class="scrollto" href="#contact">Contact Form</a></li>
+								<li><a class="scrollto" href="#map">Google Maps</a></li>
+								<li><a class="scrollto" href="#loader">Preloader</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+					
+					
+                </div>             
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <small class="copyright">All rights reserved</small>
+        </div>
+    </footer>
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

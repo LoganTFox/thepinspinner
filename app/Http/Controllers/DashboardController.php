@@ -20,7 +20,7 @@ class DashboardController extends Controller
     {
         $boards = Board::where('user_id', '=', auth()->id())->get();
 
-        $categories = Category::where('user_id', '=', auth()->id())->paginate(1);
+        $categories = Category::where('user_id', '=', auth()->id())->get();
 
         $pins = Pin::where('user_id', '=', auth()->id())->inRandomOrder()->get();
 

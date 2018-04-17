@@ -12,7 +12,7 @@ Route::delete('/pins/delete/{pin}', 'PinsController@destroy')->middleware('auth'
 Route::get('/pins/update/{pin}', 'PinsController@edit')->middleware('auth');
 Route::patch('/pins/update/{pin}', 'PinsController@update')->middleware('auth');
 Route::get('/pins/{pin}', 'PinsController@show')->middleware('auth');
-Route::patch('/pins/pin-date/{pin}', 'PinsController@pinDate');
+Route::patch('/pins/pin-date/{pin}', 'PinsController@pinDate')->middleware('auth');
 
 Route::get('/boards', 'BoardsController@index')->middleware('auth');
 Route::get('/boards/create', 'BoardsController@create')->middleware('auth');
@@ -38,7 +38,7 @@ Route::get('/notes/create/{id}', 'NotesController@destroy')->name('note.delete')
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('home')->middleware('auth');
 
-Route::get('/subscribe', 'SubscriptionsController@index');
+Route::get('/subscribe', 'SubscriptionsController@index')->name('subscribe');
 Route::post('/subscribe', 'SubscriptionsController@store');
 
 Route::get('/account', 'AccountsController@show')->middleware('auth');
